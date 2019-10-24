@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+
+
+<!-- JDBC Database connection settings -->
+
+<property name="connection driver class">com.mysql.cj.jdbc.Driver</property>
+<property name="connection.url">jdbc:mysql://localhost:3306/hb-01-one-to-one-uni</property>
+<property name="connection.username">root</property>
+<property name="connection.password">root</property>
+
+<!-- JDBC connection pool settings -->
+<property name="connection.pool_size=">5</property>
+<property name="hibernate.current_session_context_class">thread</property>
+
+<!--select our SQL dialect -->
+<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+<property name ="hibernate.jdbc.lob.non_contextual_creation">true</property>
+
+<!--show the SQL Query -->
+<property name="show_sql"> true</property>
+<property name="format_sql"> true</property>
+<property name="hbm2ddl.auto">update</property>
+
+<!-- mapping class -->
+<mapping class="com.nt.entities.Instructor"/>
+<mapping class="com.nt.entities.InstructorDetail"/>
+
+
+</session-factory>
+</hibernate-configuration>
